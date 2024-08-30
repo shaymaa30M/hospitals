@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المستشفيات</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+    <header class="h">
+        <img  src="./img/user_image_20240827_134123219b03a9158.png" alt="شعار الموقع" >
+        <h1>صحتي</h1>
+        
+    </header>
+
+    <section id="search" style="display: block;">
+        <input type="text" placeholder="ابحث عن مستشفى أو منطقة جغرافية...">
+        <button onclick="searchHospital()">بحث</button>
+    </section>
+
+  <section id="results">
+    <div class="hospital-card" data-name="مشفى الراعي" data-location="الراعي" data-contact="+905559927797">
+      <img src= "img/الراعي1.08_ddb47bb0.jpg" alt="مشفى الراعي">
+      <h2>مشفى الراعي</h2>
+      <button onclick="viewDetails(this)">عرض التفاصيل</button>
+      <button onclick="contactHospital()">للتواصل</button>
+  
+      <!-- <button onclick="display_comment(this)">التعليقات</button> -->
+  </div>
+
+      <div class="hospital-card" data-name="مشفى الباب" data-location="الباب" data-contact="+905319477251">
+          <img src="./img/albab_logo.jpg" alt="مشفى الباب">
+          <h2>مشفى الباب</h2>
+          <button onclick="viewDetails(this)">عرض التفاصيل</button>
+          <button onclick="makeReservation()">
+            <a href="https://www.albabhos.net/index.php"style="color: #fff;">للحجز</a>
+          </button>
+          <button onclick="contactHospital()">للتواصل</button>
+          <!-- <button onclick="display_comment(this)">التعليقات</button> -->
+      </div>
+
+      <div class="hospital-card" data-name="مشفى الفتح" data-location="الباب" data-contact="+905012457774">
+          <img src="img/الفتح_n.jpg" alt="مشفى الفتح">
+          <h2>مشفى الفتح</h2>
+          <button onclick="viewDetails(this)">عرض التفاصيل</button>
+          <button onclick="contactHospital()">للتواصل</button>
+          <!-- <button onclick="display_comment(this)">التعليقات</button> -->
+      </div>
+
+      <div class="hospital-card" data-name="مشفى دوا" data-location="اعزاز" data-contact=>
+          <img src="img/صورة واتساب بتاريخ 1446-02-25 في 15.14.28_783d0d34.jpg" alt="مشفى دوا">
+          <h2>مشفى دوا</h2>
+          <button onclick="viewDetails(this)">عرض التفاصيل</button>
+          <button onclick="contactHospital()">للتواصل</button>
+          <!-- <button onclick="display_comment(this)">التعليقات</button>  -->
+      </div>
+
+      <div class="hospital-card" data-name="مشفى الماجد" data-location="الباب" data-contact="+905541983129">
+          <img src= "img/الماجد68_n.jpg" alt="مشفى الماجد">
+          <h2>مشفى الماجد</h2>
+          <button onclick="viewDetails(this)">عرض التفاصيل</button>
+          <button onclick="contactHospital()">للتواصل</button>
+          <!-- <button onclick="display_comment(this)">التعليقات</button> -->
+      </div>
+      
+      
+    
+      <!-- <div class="hospital-card" data-name="مشفى الفارابي" data-location="الباب" data-contact="">
+        <img src="img/صورة واتساب بتاريخ 1446-02-25 في 15.14.28_783d0d34.jpg" alt="مشفى الفارابي">
+        <h2>مشفى دواء التخصصي</h2>
+        <button onclick="viewDetails(this)">عرض التفاصيل</button>
+        <button onclick="contactHospital()">للتواصل</button>
+       <button onclick="display_comment(this)">التعليقات</button>
+    </div> -->
+  </section>
+
+
+  <section id="hospital-details" style="display: none;">
+    <img id="details-image" src="albab_logo.jpg" width="200px" height="200px">
+    <h2 id="details-name">اسم المستشفى</h2>
+    <p id="details-location">الموقع: </p>
+    <p id="details-hours">ساعات العمل: </p>
+    <p id="details-services">الخدمات المتاحة: </p>
+    <h3>الأطباء المتخصصون:</h3>
+    <ul id="details-doctors">
+     
+    </ul>
+    <button onclick="closeDetails()">إغلاق</button>
+
+</section>
+<footer class="footer">
+  <div class="footerContainer" style="display: block">
+    <!-- Social media icons -->
+    <div class="socialIcons">
+      <a href="https://www.facebook.com/marhabanbitalebalalm"
+        ><i class="fa-brands fa-facebook"></i
+      ></a>
+      <a href="https://www.instagram.com/mshfy4857/"><i class="fa-brands fa-instagram"></i></a>
+      <a href="mailto:zaidalmohamed455@gmail.com"><i class="fa-brands fa-google-plus"></i></a>
+    </div>
+
+    <!-- Footer navigation links -->
+    <div class="footerNav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+
+        <!-- <li><a href="">About</a></li> -->
+        <li><a href="mailto:zaidalmohamed455@gmail.com">Contact Us</a></li>
+        <!-- <li><a href="">our Team</a></li> -->
+      </ul>
+    </div>
+
+    <!-- Copyright section at the bottom of the footer -->
+    <div class="footerBottom">
+      <p>Copyright &copy;2024; Designed by sara & shaymaa</p>
+    </div>
+  </div>
+</footer>
+    <!-- قسم التعليقات -->
+    <!-- <div id="hospital-comment" style="display: none;">
+      <h3>التعليقات على <span id="hospital-name"></span></h3>
+      <div id="comments-list">
+         سيتم إضافة التعليقات هنا 
+      </div>
+      <textarea id="codes" placeholder="أضف تعليقك هنا"></textarea>
+      <button id="send-button" onclick="send()">إرسال</button>
+      <button onclick="close_comment()">إغلاق</button>
+    </div>
+  <button ><a href="home.html">home</a></button> -->
+<script src="js.js"></script>
+
+  </body>
+</html>
